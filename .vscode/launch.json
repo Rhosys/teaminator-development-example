@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run unit tests",
+            "protocol": "inspector",
+            "program": "${workspaceFolder}/yarn test",
+            "stopOnEntry": false,
+            "sourceMaps": true,
+            "args": ["--opts", "mocha-webpack.opts"], //you can specify paths to specific tests here
+            "runtimeArgs": [
+                "--debug-brk"
+            ],
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "NODE_ICU_DATA": "./node_modules/full-icu"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch (web)",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "debug"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "auto",
+            "port": 5858
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Process",
+            "port": 8080
+        }
+    ]
+}

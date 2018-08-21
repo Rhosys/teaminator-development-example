@@ -1,0 +1,132 @@
+// Bootstrap theme-color variables: https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
+// If you want to change that, you will also need to update @/components/colorPallete.js
+$theme-colors: (
+  "primary": #ff9343,
+  "secondary": #4b6f80,
+  "dark": #2d434d,
+  "light": #f8fafa,
+  "info": #5c889d
+);
+
+// bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #e9eff2; // light
+  overflow-y: scroll !important;
+}
+
+h1, h2 {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+:focus {
+  outline: none;
+}
+
+// modals
+a.dropdown-item {
+  outline: none;
+  &:hover {
+    color: #fff;
+    background-color: map-get($theme-colors, "info")
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform-origin: center top;
+  transform: translateY(5%);
+  opacity: 0;
+}
+
+// helper classes
+.hover {
+  transition: background-color 0.3s;
+}
+
+.hover:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+.hover-text {
+  color: rgba(0,0,0,0.05);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.hover-scale {
+  transition: transform 0.3s;
+}
+
+.hover-scale:hover {
+  transform: scale(1.5);
+}
+
+.hover-success {
+  transition: transform 0.3s, color 0.3s;
+}
+
+.hover-success:hover {
+  color: map-get($theme-colors, "success") !important;
+}
+
+.hover-danger {
+  transition: transform 0.3s, color 0.3s;
+}
+
+.hover-danger:hover {
+  color: map-get($theme-colors, "danger") !important;
+}
+
+.hover-black {
+  transition: transform 0.3s, color 0.3s;
+}
+
+.hover-black:hover {
+  color: #000 !important;
+}
+
+.selected-bkg {
+  background-color: #d0e1e7 !important;
+}
+
+.notification {
+  box-shadow: 0 0 20px #00000023;
+  border-radius: 4px;
+}
+
+.navlink-active span {
+  border-bottom: 2px solid map-get($theme-colors, "primary");
+}
+
+.text-dots {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.unselectable {
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  -o-user-select:none;
+  user-select:none;
+}
